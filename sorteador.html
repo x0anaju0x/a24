@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="nav.js"></script>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="sorteador.css">
+    <script defer src="sorteador.js"></script>
+    <link rel="icon" href="question-mark-regular-48.png">
+    <title>A24</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="index.html">A24 Studios</a>
+            <button class="hamburguer"></button>
+            <ul class="ulnav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a href="sorteador.html">Sorteador</a></li>
+                <li><a href="novidades.html">Novidades</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <main>
+        <h1 class="subtitle">Seleção de Filmes</h1>
+        <p>Descubra o universo cinematográfico perfeito para você! Se as opções parecem avassaladoras entre os escolhidos da semana na nossa seção de <a class="atext" href="filmes.html">Filmes</a>, não se preocupe - estamos aqui para tornar essa jornada mais fácil para você! Nosso sorteio exclusivo está aqui para eliminar qualquer indecisão, tornando a sua experiência ainda mais especial. Escolha os filmes que mais despertam seu interesse e deixe o sorteio guiar você para uma experiência única e envolvente. Sua próxima aventura cinematográfica está prestes a começar!</p>
+        <table id="filmeTable">
+            <thead>
+                <tr>
+                    <th>Gênero</th>
+                    <th>Filme</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button class="sort" onclick="selecionarFilmes()">Selecionar Filmes</button>
+        <div id="resultado"></div>
+        <button class="sort" onclick="sortearFilme()">Sortear Filme</button>
+        <div id="resultadoSorteio"></div>
+    </main>
+</body>
+</html>

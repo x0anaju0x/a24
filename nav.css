@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color:#fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 5vh;
+    text-transform: uppercase;
+    letter-spacing: 0.5vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(0, 0, 0);
+    height: 8vh;
+    z-index: 1000;
+}
+
+.ulnav {
+    display: flex;
+    gap: 6vh;
+    list-style: none;
+}
+
+.ulnav a {
+    font-size: 4vh;
+    color: #fff;
+    padding-top: 16px;
+}
+/*botao de opçoes*/
+.hamburguer {
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    width: 5vh;
+    height: 3px;
+    background: #fff;
+    margin-top: 0.8vh;
+    position: relative;
+}
+
+.hamburguer:hover {
+    opacity: 0.7;
+}
+@media (max-width:750px){
+    .hamburguer{
+        display:block;
+        z-index: 1;
+    }
+
+    .ulnav{
+        position: fixed;
+        top: 0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(0, 0, 0);
+        clip-path: circle(100px at 100% -50%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+    
+    .ulnav a {
+        font-size: 8vh;
+        opacity: 0;
+    }
+
+    .ulnav li:nth-child(1) a{
+        transition: 0.4s 0.4s;
+    }
+    .ulnav li:nth-child(2) a{
+        transition: 0.6s 0.6s;
+    }
+    .ulnav li:nth-child(3) a{
+        transition: 0.8s 0.8s;
+    }
+    .ulnav li:nth-child(4) a{
+        transition: 1s 1s;
+    }
+
+    nav.active .ulnav{
+        clip-path: circle(1500px at 100% -50%);
+        pointer-events: all;
+    }
+
+    nav.active .ulnav a {
+        opacity: 1;
+    }
+
+    nav.active .hamburguer{
+        border-top-color: transparent;
+    }
+
+    nav.active .hamburguer::before{
+        transform: rotate(135deg);
+    }
+
+    nav.active .hamburguer::after{
+        transform: rotate(-135deg);
+        top:-1.45vh;
+    }
+}
+
